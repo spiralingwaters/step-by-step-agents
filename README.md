@@ -34,7 +34,7 @@ For instance, the first step could be a prompt that says "Write an outline about
 
 Any step file can also be a python script, which allows calling external programs, or loading dynamic content into the prompt itself.
 
-## Getting Started
+## ✈️ Getting Started
 
 ### Installation
 
@@ -57,7 +57,7 @@ By default the framework uses a script named "oneshot" to run the LLM prompt. Th
 
 **WARNING:** By default, this script uses ollama, and uses an abliterated(a.k.a. uncensored) version of Qwen3-1.7B of Q4_K_M quantization. This will require a 2.5GB download, and at least 6GB of RAM.
 
-## Files:
+## 📂 Files:
 
 - route.py
 - step.txt
@@ -78,7 +78,7 @@ The **input.txt** file always saves the initial user query before the function s
 
 Any **folder** whose name _does not_ begin with an underscore is considered a function. **route/** is the default function which routes the query to any other function. **math/** is an example of a tool usage function. **chat/** is an example of a looping function.
 
-## Functions
+## 🧩 Functions
 
 To add a function, you can just create a new folder.
 
@@ -107,7 +107,7 @@ What is eight times nine<|im_end|>
 
 Notice that it doesn't include the system prompt. What the {{route}} function does is list all of the "info.txt" files for each function as a part of it's system prompt, to tell the LLM which functions are available. Then it includes all of the "example.txt" files one after another as if they were the first messages exchanged in the conversation.
 
-## Step Files
+## 👣 Step Files
 
 Every step file starts with a number of which step it is, followed by a special file extension that signals to the framework what to do with that file.
 
@@ -144,7 +144,7 @@ That means you can use programming to generate an answer without using the slow 
 
 This is also where you can implement "tool usage" by calling external programs.
 
-## Tool Usage
+## 🛠 Tool Usage
 
 The {{math}} function is a good example of tool usage. Instead of asking the LLM to answer the math problem, the LLM is asked to create a python script to solve the math problem.
 

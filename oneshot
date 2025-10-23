@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+# ONESHOT
+# Small but quick.
+# - uses file or string
+# - uses Qwen3-1.7b
+# - no template for file
+# - uses template on string
+#   - includes /no_think
+#   - includes 'concisely'
+#   - no system prompt
+
+import requests
+import sys
+import os
+
+prompt = sys.argv[1]
+if os.path.exists(prompt):
+  with open(prompt,'r') as f:
+    prompt = f.read().strip()
+else:
+  start = """<|im_start|>user
+/no_think """
+  end = """
+
+Respond concisely where possible.<|im_end|>
+<|im_start|>assistant
+"""
+  prompt = start+prompt+end
+
+url = "http://localhost:11434/api/generate"
+data = {"model": "huihui_ai/qwen3-abliterated:1.7b", "prompt": f"{prompt}", "stream": False}
+
+#REMOVE <think></think>
+response = requests.post(url, json=data).json()
+response = response["response"].split("</think>")
+print(response[1].strip())
+

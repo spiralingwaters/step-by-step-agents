@@ -1,0 +1,1 @@
+{{math}} is the function to call when the user wants you to solve a math problem.

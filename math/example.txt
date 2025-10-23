@@ -1,0 +1,4 @@
+<|im_start|>user
+What is eight times nine<|im_end|>
+<|im_start|>assistant
+{{math}}<|im_end|>

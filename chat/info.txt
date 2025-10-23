@@ -1,0 +1,1 @@
+{{chat}} is the function to call when the user just wants to chat.

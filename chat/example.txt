@@ -1,0 +1,4 @@
+<|im_start|>user
+Let's talk about cognitive biases and cognitive dissonance.<|im_end|>
+<|im_start|>assistant
+{{chat}}<|im_end|>

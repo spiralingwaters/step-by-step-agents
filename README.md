@@ -140,10 +140,9 @@ Any step can include python scripting. This means you can use python to process 
 
 There are two ways to use python scripts.
 
-If the start or end template ends with ".py" such as **.start.py** or **.end.py**, then instead of using the text in the file as a start or end template, the framework uses the output of the script as the start or end template. This means you can dynamically load content into the prompt.
+If the start or end template ends with ".py" such as **.start.py** or **.end.py**, then instead of using the text in the file as a start or end template, the framework uses the _output of the script_ as the start or end template. This means you can dynamically load content into the prompt.
 
-**.py**
-If you put a script in that isn't named as a start or end template, it will simply call that script and use the output as the input to the next step. 
+If you put a file ending in just **.py** that isn't named as a start or end template, it will simply call that script and use the output as the input to the next step. 
 
 That means you can use programming to generate an answer without using the slow LLM response time. The more strategic text processing you can handle with programming, the less the LLM has to handle, and the shorter your response times.
 

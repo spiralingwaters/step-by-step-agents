@@ -116,7 +116,7 @@ Notice that it doesn't include the system prompt. What the {{route}} function do
 
 Every step file starts with a number of which step it is, followed by a special file extension that signals to the framework what to do with that file.
 
-### Basics
+### Basic Step Files
 
 **.input** is used to signal the framework to ask for user input before proceeding. This can be used at any step.
 
@@ -134,7 +134,7 @@ Remember, each prompt should stick to the appropriate LLM template:
 <|im_start|>assistant
 ```
 
-### Advanced
+### Advanced Step Files
 
 Any step can include python scripting. This means you can use python to process results, load dynamic content into prompts, or call external programs.
 

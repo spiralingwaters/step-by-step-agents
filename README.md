@@ -38,7 +38,7 @@ Any step file can also be a python script, which allows calling external program
 
 ### Installation
 
-** WARNING:** 2.5GB LLM model will begin downloading as soon as you run "route.py"
+**WARNING:** 2.5GB LLM model will begin downloading as soon as you run "route.py"
 
 * Requires ollama
 * Requires 8GB RAM

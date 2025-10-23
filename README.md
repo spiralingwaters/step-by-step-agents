@@ -38,11 +38,11 @@ Any step file can also be a python script, which allows calling external program
 
 ### Installation
 
-**WARNING:** 2.5GB LLM model will begin downloading as soon as you run "route.py"
+**WARNING:** 1.2GB LLM model will begin downloading as soon as you run "route.py"
 
 * Requires ollama
 * Requires 8GB RAM
-* Requires 2.5GB harddrive space
+* Requires 1.2GB harddrive space
 
 Unzip **master-branch.zip** into any folder, and run "route.py" to get started!
 
@@ -55,14 +55,15 @@ By default the framework uses a script named "oneshot" to run the LLM prompt. Th
 - Ollama
 - Qwen3-abliterated:1.7B
 
-**WARNING:** By default, this script uses ollama, and uses an abliterated(a.k.a. uncensored) version of Qwen3-1.7B of Q4_K_M quantization. This will require a 2.5GB download, and at least 6GB of RAM.
+**WARNING:** By default, this script uses ollama, and uses an abliterated(a.k.a. uncensored) version of Qwen3-1.7B of Q4_K_M quantization. This will require a 1.2GB download, and at least 6GB of RAM.
 
 ## 📂 Files:
 
 - route.py
 - step.txt
-- output.txt
 - input.txt
+- output.txt
+- prompt.txt
 - route/
 - math/
 - chat/
@@ -72,11 +73,15 @@ The **route.py** script does all the work to keep track of which function you've
 
 The **step.txt** file is used to keep track of which step you're on, and can be programmatically altered to change the flow of the function to skip steps or loop back to previous steps under certain conditions.
 
-The **output.txt** file always saves the latest output.
-
 The **input.txt** file always saves the initial user query before the function starts, to make it easy to reference the original query later.
 
+The **output.txt** file always saves the latest output.
+
+The **prompt.txt** file holds the latest full prompt, and runs the LLM with this file as the input.
+
 Any **folder** whose name _does not_ begin with an underscore is considered a function. **route/** is the default function which routes the query to any other function. **math/** is an example of a tool usage function. **chat/** is an example of a looping function.
+
+The **oneshot** script takes a file as input prompt, and prints out the LLM response. It uses ollama. The LLM can be changed to anything available through ollama by editing the model name in "oneshot". To use something other than ollama, just make it a script called "oneshot" that takes a file as input, and prints the LLM response as output.
 
 ## 🧩 Functions
 
